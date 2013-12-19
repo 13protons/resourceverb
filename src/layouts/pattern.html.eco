@@ -1,6 +1,5 @@
 ---
 layout: default
-dynamic: true
 ---
 <article id="page" class="pattern pure-u-2-3">
 <div class="content">

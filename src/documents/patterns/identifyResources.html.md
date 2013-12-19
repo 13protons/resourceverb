@@ -6,8 +6,6 @@ authorMeta:
 tags: 
   - "Identify,Resources,The Basics" 
 
-dynamic: true
-
 components: 
  - name: resource
    content: Plural form of whatever this collection contains. `Dog` becomes `/dogs`, for example
