@@ -1,0 +1,51 @@
+---
+layout: default
+dynamic: true
+---
+<article id="page" class="pattern pure-u-2-3">
+<div class="content">
+				<h1 class="title"><%= @document.title %></h1>
+			   				
+<% if @document.components: %>
+<h2 class="url_pattern"><% for project, idx in @document.components: %><span class="slash">/</span><span class="url_resource url_resource_<%= idx %>"><%= project.name %></span><% end %></h2>
+<div class="pure-g-r">
+  <% for project in @document.components: %>
+    <div class="pure-u-1-4 component"><%= project.name %></div>
+    <div class="pure-u-3-4 description"><t render="markdown"><%= project.content %></t></div>
+  <% end %>
+</div>
+<% end %>
+                
+                <div class="page-content pure-u"><%- @content %></div>
+					
+                
+                <div class="pure-g-r">
+				<div class="seealso pure-u-1-2">
+                    <h3>See Also</h3>
+<% for document in @getRelatedDocuments(): %>
+    <a href="<%= document.url %>"><%= document.title %></a><br/>
+<% end %>
+                </div>
+				
+<% if @document.refs: %>
+<div class="pure-u-1-2">
+                        <h3>References</h3>
+
+<ol>
+<% for project in @document.refs: %>
+    <li><t render="markdown"><%= project %></t></li>
+<% end %>
+</ol> 
+                    </div>
+<% end %>
+
+               
+<% if @document.comments != 'no_comment': %>
+<div class="pure-u-1 comments">
+<%- @getDisqus() %>
+</div>  
+<% end %>
+</div>
+
+</div>
+</article>

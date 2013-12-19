@@ -3,8 +3,6 @@ Resource Verb (RV) is a pragmatic api development style. You could build a REST 
 
 Made with [YUI Purecss](http://purecss.io/) and [DocPad](https://github.com/bevry/docpad)
 
-![Alt text](https://googledrive.com/host/0B9LVk4xbDIJTSWVYcU5fb0RUVVk/purecss-docpad.png "Screen shot of Purecss landing page template in google chrome on a local docpad server.")
-
 ## Getting Started
 
 	``` bash

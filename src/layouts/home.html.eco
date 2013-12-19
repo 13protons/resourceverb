@@ -1,0 +1,19 @@
+---
+layout: 'master'
+---
+<!-- Markup -->
+<div class="wrapper homepage pure-g-r">
+	
+			<div class="hero pure-u-1">
+				<img src="images/rvlogo.png" alt="RV: Resource Verb" />
+				<p>A pragmatic approach to apis</p>
+			</div>
+			    
+	<%- @content %>
+    
+	<div class="footer pure-u-1">
+		&copy; 2013 RV
+	</div>
+</div>
+
+

@@ -1,0 +1,11 @@
+```
+title: Patterns
+layout: page
+tags: [page]
+```
+patterns
+<ul>
+<% for post in @getCollection("patterns").toJSON(): %>
+    <li><a href="<%= post.url %>"><%= post.title %></a></li>
+<% end %>
+</ul>

@@ -12,7 +12,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://resourceverb.com"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -46,9 +46,13 @@ docpadConfig = {
 			]
 
 			# Scripts
-			scripts: []
+			scripts: [
+				"/vendor/jquery.min.js"
+				"/scripts/functions.js"
+			]
 
-
+			services:
+				disqus: 'resourceverb'
 
 		# -----------------------------
 		# Helper Functions
@@ -81,9 +85,16 @@ docpadConfig = {
 	# These are special collections that our website makes available to us
 
 	collections:
+		patterns: (database) ->
+			@getCollection("html").findAllLive({relativeOutDirPath: 'patterns'}).on "add", (model) ->
+        		model.setMetaDefaults({comments:"true", layout:"pattern"})
+		
 		pages: (database) ->
-			database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
-
+			@getCollection("html").findAllLive({relativeOutDirPath: 'pages'}).on "add", (model) ->
+            model.setMetaDefaults({layout: "page",comments:"no_comment"})
+			database.findAllLive({tags:$has:'page'}, [date:-1]).on "add", (model) ->
+            model.setMetaDefaults({layout: "page",comments:"no_comment"})
+			
 		posts: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
 

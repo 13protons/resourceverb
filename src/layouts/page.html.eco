@@ -1,0 +1,24 @@
+---
+layout: default
+dynamic: true
+---
+
+<article id="page" class="page pure-u-2-3">
+<div class="content">
+				<h1><%= @document.title %></h1>
+			   				     
+                <div class="pure-g-r">
+
+				<div class="page-content pure-u-1"><%- @content %></div>
+
+
+               
+<% if @document.comments != 'no_comment': %>
+<div class="pure-u-1 comments">
+<%- @getDisqus() %>
+</div>  
+<% end %>
+</div>
+
+</div>
+</article>

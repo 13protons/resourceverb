@@ -1,0 +1,40 @@
+@rv_orange: #ED9C44;
+@rv_red: #DE4F3A;
+@rv_blue_light: #86B4E0;
+@rv_blue: #085D87;
+@rv_green: #347817;
+
+body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: "news-gothic-std", Helvetica, Arial, sans-serif;
+}
+
+#page {
+
+	.url_pattern {
+		.slash {
+			color: @rv_blue;
+		}
+		.url_resource {
+			color: @rv_green;
+			&.url_resource_1 {
+				color: @rv_blue_light;
+			}
+		}
+	}
+}
+.homepage {
+	width: 640px; 
+	text-align: center; 
+	margin: 0 auto;
+}
+
+.footer {
+	text-align: center; 
+	padding: 2em 0 5em 0;
+	margin-top: 2em;
+	color: @rv_blue;
+	background-color: @rv_blue_light
+}
