@@ -21,11 +21,11 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Resource Verb"
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				A pragmatic approach to desingin web apis.
 				"""
 
 			# The website keywords (for SEO) separated by commas
@@ -34,10 +34,10 @@ docpadConfig = {
 				"""
 
 			# The website author's name
-			author: "Your Name"
+			author: "Alan Languirand"
 
 			# The website author's email
-			email: "your@email.com"
+			email: "alanguir@apigee.com"
 
 			# Styles
 			styles: [
@@ -73,7 +73,8 @@ docpadConfig = {
 		getPreparedKeywords: ->
 			# Merge the document keywords with the site keywords
 			@site.keywords.concat(@document.keywords or []).join(', ')
-
+			
+		
 
 	# =================================
 	# Collections
